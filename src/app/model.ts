@@ -1,4 +1,4 @@
-export class Model {
+export class Todo {
     user;
     items;
 
@@ -16,7 +16,6 @@ export class Model {
             ];
     }
 }
-
 export class TodoItem {
 
     description;
@@ -27,3 +26,4 @@ export class TodoItem {
         this.action = action;
     }
 }
+

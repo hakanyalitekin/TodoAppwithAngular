@@ -1,6 +1,6 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { Model, TodoItem } from './model';
+import { Todo, TodoItem } from './model';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,8 @@ import { Model, TodoItem } from './model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  model = new Model();
+
+  model = new Todo();
   isDisplay = false;
 
   getUser() {
@@ -19,7 +20,7 @@ export class AppComponent {
     if (this.isDisplay) {
       return this.model.items;
     }
-    // Sadece false olanları listelemek için filtreledik.
+    // Sadece yapılmayanları listelemek için filtreledik.
     return this.model.items.filter(item => !item.action);
   }
 
