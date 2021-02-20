@@ -28,15 +28,15 @@
                     </tr>
                 </thead>
                 <tbody>
-
-                    <tr *ngFor="let item of getItems(); let i= index">
-                        <td>{{i+1}}</td>
+                    <!--forEach döngüsü, "let i=index" zorunlu değildi, sadece tabloya sıra numarası eklemek için çağırdık -->
+                    <tr *ngFor="let item of getItems(); let i=index">
+                        <td>{{i+1}}</td> <!--Sıfırdan başladığı için +1-->
                         <td>{{item.description}}</td>
                         <td>
                             <input type="checkbox" class="form-check"  [(ngModel)]="item.action">
                            
-                            
-                            <label [ngSwitch]="item.action">
+                            <!-- switch-case kullanımı -->
+                            <label [ngSwitch]="item.action"> <!--true-false dönüyor-->
                                 <span *ngSwitchCase="true">Yes</span>
                                 <span *ngSwitchCase="false">No</span>
                             </label>
