@@ -1,6 +1,6 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { Model } from './model';
+import { Model, TodoItem } from './model';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,26 @@ import { Model } from './model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- model = new Model();
+  model = new Model();
+  isDisplay = false;
 
- getUser(){
-   return this.model.user;
- };
+  getUser() {
+    return this.model.user;
+  };
 
- getItems(){
-   //Sadece false olanları listelemek için filtreledik.
-   return this.model.items.filter(item=>!item.action);
- }
+  getItems() {
+    if(this.isDisplay){
+      return this.model.items;
+    }
+    //Sadece false olanları listelemek için filtreledik.
+    return this.model.items.filter(item => !item.action);
+  };
+
+  addItem(value) {
+    if (value != "") {
+      this.model.items.push(
+        new TodoItem(value, false)
+      );
+    }
+  }
 }
