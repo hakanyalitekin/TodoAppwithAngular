@@ -3,12 +3,16 @@ export class Model {
     items;
 
     constructor() {
-        this.user = "Hakan",
+        this.user = 'Hakan',
             this.items = [
-                new TodoItem("Spor", false),
-                new TodoItem("Kahvaltı", true),
-                new TodoItem("Kitap", false),
-                new TodoItem("Sinema", false),
+                // tslint:disable-next-line: no-use-before-declare
+                new TodoItem('Spor', false),
+                // tslint:disable-next-line: no-use-before-declare
+                new TodoItem('Kahvaltı', true),
+                // tslint:disable-next-line: no-use-before-declare
+                new TodoItem('Kitap', false),
+                // tslint:disable-next-line: no-use-before-declare
+                new TodoItem('Sinema', false),
             ];
     }
 }

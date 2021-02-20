@@ -13,18 +13,19 @@ export class AppComponent {
 
   getUser() {
     return this.model.user;
-  };
+  }
 
   getItems() {
-    if(this.isDisplay){
+    if (this.isDisplay) {
       return this.model.items;
     }
-    //Sadece false olanları listelemek için filtreledik.
+    // Sadece false olanları listelemek için filtreledik.
     return this.model.items.filter(item => !item.action);
-  };
+  }
 
   addItem(value) {
-    if (value != "") {
+    // tslint:disable-next-line: triple-equals
+    if (value != '') {
       this.model.items.push(
         new TodoItem(value, false)
       );
