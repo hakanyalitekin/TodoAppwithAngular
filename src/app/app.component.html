@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <h3 class="bg-primary text-white p-3">
+                [{{getUser()}}]To Do List
+                <!-- {{model.user}} de diyebilirdik. Metot kullanmak zorunda değiliz. -->
+            </h3>
+
+            <div class="input-group mb-2">
+                <input type="text" class="form-control">
+                <div class="input-group-append">
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </div>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let item of getItems(); let i= index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.description}}</td>
+                        <td>
+                            <input type="checkbox" class="form-check"  [(ngModel)]="item.action">
+                           
+                            <label [ngSwitch]="item.action">
+                                <span *ngSwitchCase="true">Yes</span>
+                                <span *ngSwitchCase="false">No</span>
+                            </label>
+                            
+                        </td>
+                      
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
