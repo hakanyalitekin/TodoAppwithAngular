@@ -30,6 +30,7 @@
                         <td>
                             <input type="checkbox" class="form-check"  [(ngModel)]="item.action">
                            
+                            
                             <label [ngSwitch]="item.action">
                                 <span *ngSwitchCase="true">Yes</span>
                                 <span *ngSwitchCase="false">No</span>
